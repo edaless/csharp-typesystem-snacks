@@ -212,28 +212,28 @@
 
 
 
-//Ciclo while
-//    9. Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
-//    Continua a chiedere i numeri all’utente e a inserirli nell’array,
-//    fino a quando la somma degli elementi è minore di 50.
+////Ciclo while
+////    9. Crea un array vuoto e chiedi all’utente un numero da inserire nell’array.
+////    Continua a chiedere i numeri all’utente e a inserirli nell’array,
+////    fino a quando la somma degli elementi è minore di 50.
 
 
 
-int sommaEs9 = 0;
-int indexEs9 = 0;
-int limiteEs9 = 50;
-int[] arrEs9 = new int[limiteEs9 + 1];
-while (sommaEs9 < limiteEs9)
-{
-    Console.WriteLine($"dimmi il numero ({indexEs9 + 1}):  ");
-    arrEs9[indexEs9] = Convert.ToInt32(Console.ReadLine());
-    sommaEs9 = sommaEs9 + arrEs9[indexEs9];
-    indexEs9++;
-}
+//int sommaEs9 = 0;
+//int indexEs9 = 0;
+//int limiteEs9 = 50;
+//int[] arrEs9 = new int[limiteEs9 + 1];
+//while (sommaEs9 < limiteEs9)
+//{
+//    Console.WriteLine($"dimmi il numero ({indexEs9 + 1}):  ");
+//    arrEs9[indexEs9] = Convert.ToInt32(Console.ReadLine());
+//    sommaEs9 = sommaEs9 + arrEs9[indexEs9];
+//    indexEs9++;
+//}
 
 
-Console.WriteLine($"ok, abbiamo superato il limite di {limiteEs9} ");
-Console.WriteLine($"tecnicamente siamo arrivati a {sommaEs9} ");
+//Console.WriteLine($"ok, abbiamo superato il limite di {limiteEs9} ");
+//Console.WriteLine($"tecnicamente siamo arrivati a {sommaEs9} ");
 
 
 
@@ -244,20 +244,34 @@ Console.Write($"inserisci un numero N = ");
 int N = Convert.ToInt32(Console.ReadLine());
 //Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
 int topEs10 = 10;
+Random rnd = new Random();
 
 for (int i = 0; i < N; i++)
 {
+    Console.WriteLine($"array {i + 1}:");
     int[] array = new int[topEs10];
 
     for (int j = 0; j < topEs10; j++)
     {
-        Console.WriteLine($"tecnicamente siamo arrivati a {new Random()} ");
+        array[j] = rnd.Next(100);
 
     }
 
+
+    //Ogni volta che ne crei uno, stampalo a schermo.
+    for (int j = 0; j < topEs10; j++)
+    {
+        
+
+        Console.WriteLine($"{j+1}: {array[j]}");
+    }
+
+    Console.WriteLine($"{Environment.NewLine}");
 }
 
-//Ogni volta che ne crei uno, stampalo a schermo.
+
+
+
 //Funzioni
 //    11. Dare la possibilità di inserire due parole.
 //Verificare tramite una funzione che le due parole abbiano la stessa lunghezza. Se hanno la stessa lunghezza, stamparle entrambe, altrimenti stampare la più lunga delle due.
