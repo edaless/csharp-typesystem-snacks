@@ -237,44 +237,96 @@
 
 
 
-//Random
-//    10. Fai inserire un numero, che chiameremo N, all’utente.
+////Random
+////    10. Fai inserire un numero, che chiameremo N, all’utente.
 
-Console.Write($"inserisci un numero N = ");
-int N = Convert.ToInt32(Console.ReadLine());
-//Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
-int topEs10 = 10;
-Random rnd = new Random();
+//Console.Write($"inserisci un numero N = ");
+//int N = Convert.ToInt32(Console.ReadLine());
+////Genera N array, ognuno formato da 10 numeri casuali tra 1 e 100.
+//int topEs10 = 10;
+//Random rnd = new Random();
 
-for (int i = 0; i < N; i++)
-{
-    Console.WriteLine($"array {i + 1}:");
-    int[] array = new int[topEs10];
+//for (int i = 0; i < N; i++)
+//{
+//    Console.WriteLine($"array {i + 1}:");
+//    int[] array = new int[topEs10];
 
-    for (int j = 0; j < topEs10; j++)
-    {
-        array[j] = rnd.Next(100);
+//    for (int j = 0; j < topEs10; j++)
+//    {
+//        array[j] = rnd.Next(100);
 
-    }
+//    }
 
 
-    //Ogni volta che ne crei uno, stampalo a schermo.
-    for (int j = 0; j < topEs10; j++)
-    {
+//    //Ogni volta che ne crei uno, stampalo a schermo.
+//    for (int j = 0; j < topEs10; j++)
+//    {
         
 
-        Console.WriteLine($"{j+1}: {array[j]}");
-    }
+//        Console.WriteLine($"{j+1}: {array[j]}");
+//    }
 
-    Console.WriteLine($"{Environment.NewLine}");
-}
+//    Console.WriteLine($"{Environment.NewLine}");
+//}
 
 
 
 
 //Funzioni
 //    11. Dare la possibilità di inserire due parole.
-//Verificare tramite una funzione che le due parole abbiano la stessa lunghezza. Se hanno la stessa lunghezza, stamparle entrambe, altrimenti stampare la più lunga delle due.
+Console.WriteLine($"inserisci due parole");
+int nParoleEs11 = 2;
+string[] paroleEs11 = new string[nParoleEs11];
+
+for ( int i = 0; i < nParoleEs11; i++ )
+{
+    paroleEs11[i] = Console.ReadLine();
+}
+
+//Verificare tramite una funzione che le due parole abbiano la stessa lunghezza.
+//Se hanno la stessa lunghezza, stamparle entrambe,
+//altrimenti stampare la più lunga delle due.
+
+bool uguaglianza(string parola1, string parola2)
+{
+
+    if (parola1.Length == parola2.Length)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+
+Console.WriteLine($"{Environment.NewLine}");
+if (uguaglianza(paroleEs11[0], paroleEs11[1]))
+{
+
+    Console.WriteLine($"queste due parole hanno la stessa lunghezza:");
+    Console.WriteLine($"{paroleEs11[0]}");
+    Console.WriteLine($"{paroleEs11[1]}");
+    Console.WriteLine($"{Environment.NewLine}");
+    Console.WriteLine($"{Environment.NewLine}");
+}
+else
+{
+
+    Console.WriteLine($"queste due parole NON hanno la stessa lunghezza.");
+    Console.WriteLine($"La più lunga é:");
+    if (paroleEs11[0].Length > paroleEs11[1].Length)
+    {
+        Console.WriteLine($"{paroleEs11[0]}");
+    }
+    else
+    {
+        Console.WriteLine($"{paroleEs11[1]}");
+    }
+}
+
+
 //    12. Scrivere una funzione per verificare se un numero è pari o dispari.
 //Quindi chiedere un numero all'utente e comunicargli se è pari o dispari. 
 
