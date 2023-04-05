@@ -73,7 +73,7 @@ Console.WriteLine($"{Environment.NewLine}");
 
 //    4. Calcola la somma e la media dei numeri da 2 a 10.
 somma = 0;
-for(int i = 2; i <= 10; i++)
+for (int i = 2; i <= 10; i++)
 {
     somma = somma + i;
 }
@@ -104,9 +104,55 @@ Console.WriteLine($"risultato = {numero + (numero % 2)}");
 
 
 
+Console.WriteLine($"{Environment.NewLine}");
+Console.WriteLine($"{Environment.NewLine}");
+
+
 
 //Array
-//    6. In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby. Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.
+//    6. In un array sono contenuti i nomi degli invitati alla festa del grande Gatsby.
+//    Chiedi all’utente il suo nome e comunicagli se può partecipare o meno alla festa.
+
+string[] invitati = {
+    "Matteo",
+    "Alessio",
+    "Tiglio",
+};
+
+Console.WriteLine("Dimmi il tuo nome");
+Console.Write("in lista ci sono: ");
+foreach (string invitato in invitati)
+{
+    Console.Write($"{invitato}  ");
+
+}
+Console.WriteLine($"{Environment.NewLine}");
+
+string nome = Console.ReadLine();
+
+bool presenza = false;
+for(int i = 0;i < invitati.Length && presenza == false; i++)
+{
+    if (invitati[i].ToLower() == nome.ToLower())
+    {
+        presenza = true;
+    }
+        
+}
+
+if(presenza)
+{
+
+    Console.WriteLine($"Benvenuto/a sir/madame  {nome} ");
+}
+else
+{
+    Console.WriteLine($"non sei invitato");
+
+}
+
+
+
 //	7. Crea un array vuoto.
 //Chiedi per 6 volte all’utente di inserire un numero, se è dispari inseriscilo nell’array.
 //    8. Crea un array di numeri interi e fai la somma di tutti gli elementi che sono in posizione dispari.
